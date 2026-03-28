@@ -7,6 +7,7 @@ if operador == "+":
     resultado = numero1 + numero2
     print("O resultado da adição é:", resultado)
 
+
 elif operador == "-":
     resultado = numero1 - numero2
     print("O resultado da subtração é:", resultado)
