@@ -18,14 +18,20 @@ def login():
     nome = input("Digite seu nome de usuário: ")
     senha = input("Digite sua senha: ")
     dados = []
+    aux = False
     
     with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Teste - Login/usuarios.txt", "r") as arquivo:
         #Procurar resgistros do usuario
         for dado in arquivo:
             if dado.strip().split(",")[0] == nome:
                 if dado.strip().split(",")[2] == senha:
-                    print("Login feito com sucesso!")
+                    print("\nLogin feito com sucesso!")
+                    aux = True
                     break
+
+    if aux == False:
+        print("\nUsuário ou senha incorretos!")
+                
             
 
 
