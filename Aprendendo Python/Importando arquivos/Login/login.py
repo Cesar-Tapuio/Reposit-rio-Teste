@@ -2,7 +2,7 @@ def validar_cpf(cpf):
     # Remove caracteres não numéricos
     cpf = ''.join(filter(str.isdigit, cpf))
     
-    # Verifica se tem 11 dígitos ou se todos os dígitos são iguais
+    
     if len(cpf) != 11 or len(set(cpf)) == 1:
         return False
 
@@ -29,17 +29,30 @@ def cadastro():
     email = input("Digite seu email: ")
     senha = input("Digite sua senha: ")
     cpf = str(input("Digite seu CPF: "))
+    aux = False
+
+    for letra in email:
+        if letra == "@":
+            aux = True
+    
+    if aux == False:
+        print("\nEmail inválido!")
+        return
+
+
+  
+
     
     if validar_cpf(cpf) == False:
         print("CPF inválido!")
         return
 
     with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "r") as arquivo:
-        
-        for dado in arquivo:
-            if dado.strip().split(",")[3] == cpf:
-                print("CPF já cadastrado!")
-                return
+        if arquivo != False:
+            for dado in arquivo:
+                if dado.strip().split(",")[3] == cpf:
+                    print("CPF já cadastrado!")
+                    return
             
     with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "a") as arquivo:
         arquivo.write(f"{nome},{email},{senha},{cpf}\n")
