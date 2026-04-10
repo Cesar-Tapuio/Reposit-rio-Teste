@@ -15,6 +15,9 @@ with open("/home/cesar/Documents/Python - Testes/Aprendendo/Bia - Atividades/Aul
         medias[2] += float(dado.strip().split(",")[3])
         medias[3] += float(dado.strip().split(",")[4])
 
+"""        if dado.strip().split(",")[0] == 500:
+            break"""
+
         
 
 
