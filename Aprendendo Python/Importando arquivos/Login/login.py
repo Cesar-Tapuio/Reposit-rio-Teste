@@ -1,5 +1,3 @@
-#Menu de funcionario que permite remover, listar e alterar usuarios
-
 
 
 def validar_cpf(cpf):
