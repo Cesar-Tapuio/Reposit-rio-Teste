@@ -42,5 +42,5 @@ with open("/home/cesar/Documents/Python - Testes/Aprendendo/Bia - Atividades/Aul
             if nota > max_nota:
                 max_nota = nota
 
-print(f"Mínimo: {min_nota}")
-print(f"Máximo: {max_nota}")
+print(f"Minimo: {min_nota}")
+print(f"Maximo: {max_nota}")
