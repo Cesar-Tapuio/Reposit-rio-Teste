@@ -4,7 +4,7 @@ import re
 ARQUIVO = "usuarios.txt"
 
 
-# ================== UTIL ==================
+
 
 def hash_senha(senha):
     return hashlib.sha256(senha.encode()).hexdigest()
@@ -33,7 +33,6 @@ def salvar_usuarios(usuarios):
             f.write(f"{u['nome']},{u['email']},{u['senha']},{u['cpf']}\n")
 
 
-# ================== CPF ==================
 
 def validar_cpf(cpf):
     cpf = ''.join(filter(str.isdigit, cpf))
@@ -56,7 +55,6 @@ def validar_cpf(cpf):
     return digito2 == int(cpf[10])
 
 
-# ================== CORE ==================
 
 def cadastro():
     print("\nCadastro de usuário")
@@ -129,7 +127,6 @@ def excluir_usuario():
         print("Dados incorretos!")
 
 
-# ================== ALTERAÇÕES ==================
 
 def alterar_nome():
     cpf = input("CPF: ")
@@ -183,7 +180,6 @@ def alterar_senha():
     print("Usuário não encontrado!")
 
 
-# ================== MENUS ==================
 
 def menu_cliente():
     while True:

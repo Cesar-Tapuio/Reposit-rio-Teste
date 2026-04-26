@@ -28,7 +28,7 @@ def alerta(x):
     elif x < 0.06:
         return "Alerta"
     else:
-        return "Crítico"
+        return "Critico"
 
 df["nivel_alerta"] = df["incidencia"].apply(alerta)
 

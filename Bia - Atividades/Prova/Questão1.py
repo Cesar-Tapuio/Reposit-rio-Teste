@@ -1,7 +1,8 @@
 import pandas as pd
 from datetime import datetime
 
-df = pd.read_csv("Bia - Atividades/Prova/populacao_imc.csv")
+df = pd.read_csv("Bia - Atividades/Prova/populacao_imc.csv") #Não estava achando o arquivo apenas com o nome, mesmo estando no mesmo diretório
+
 df["data_nascimento"] = pd.to_datetime(df["data_nascimento"])
 
 hoje = datetime.today()
