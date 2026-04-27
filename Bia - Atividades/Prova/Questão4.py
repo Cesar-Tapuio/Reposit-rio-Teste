@@ -15,11 +15,11 @@ while True:
 
     entrada = input("Digite um número ou 'sair' -> ")
 
-    if entrada.lower() == "sair":
+    if entrada.lower() == "sair":  
         break
     try:
         n = int(entrada)
         status, valor = avaliar(n)
         print(f"CELULA {n} :: STATUS={status} :: PAYLOAD={valor}")
     except:
-        print("Entrada invalida")
+        print("Entrada invalida ")
