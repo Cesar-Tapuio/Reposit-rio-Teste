@@ -7,7 +7,7 @@ def cadastrarProd():
         unidade = input("Tipo de unidade: ")
         quantidade_inicial = float(input("Quantidade inicial: "))
         consumo_diario = float(input("Consumo médio por dia: "))
-        prazo_reposicao = int(input("Prazo de reposição (dias): "))
+        prazo_reposicao = int(input("Prazo de reposição (dias): ")) 
 
         estoque[nome] = {
             "unidade": unidade,
