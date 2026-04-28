@@ -1,4 +1,4 @@
-
+import pathlib
 
 def validar_cpf(cpf):
     # Remove caracteres não numéricos
@@ -48,14 +48,14 @@ def cadastro():
         print("\nCPF inválido!")
         return
 
-    with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "r") as arquivo:
+    with open("usuarios.txt", "r") as arquivo:
         if arquivo != False:
             for dado in arquivo:
                 if dado.strip().split(",")[3] == cpf:
                     print("CPF já cadastrado!")
                     return
             
-    with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "a") as arquivo:
+    with open("usuarios.txt", "a") as arquivo:
         arquivo.write(f"{nome},{email},{senha},{cpf}\n")
         
 
@@ -68,7 +68,7 @@ def excluirUsuario():
     senha = input("Senha do usuario: ")
     verifUsuario = False
 
-    with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "r") as arquivo:
+    with open("usuarios.txt", "r") as arquivo:
         if arquivo != False:
             for usuario in arquivo:
                 if usuario.strip().split(",")[3] == CPF:
@@ -77,10 +77,10 @@ def excluirUsuario():
                         break
 
             if verifUsuario == True:
-                with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "r") as arquivo:
+                with open("usuarios.txt", "r") as arquivo:
                     linhas = arquivo.readlines()
 
-                with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "w") as arquivo:
+                with open("usuarios.txt", "w") as arquivo:
                     for linha in linhas:
                         if linha.strip().split(",")[3] != CPF:
                             arquivo.write(linha)
@@ -96,10 +96,10 @@ def alterarNome():
     novo_nome = input("Digite o novo nome: ")
     encontrado = False
 
-    with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "r") as arquivo:
+    with open("usuarios.txt", "r") as arquivo:
         linhas = arquivo.readlines()
 
-    with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "w") as arquivo:
+    with open("usuarios.txt", "w") as arquivo:
         for linha in linhas:
             dados = linha.strip().split(",")
 
@@ -130,10 +130,10 @@ def alterarEmail():
         print("\nEmail inválido!")
         return
 
-    with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "r") as arquivo:
+    with open("usuarios.txt", "r") as arquivo:
         linhas = arquivo.readlines()
 
-    with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "w") as arquivo:
+    with open("usuarios.txt", "w") as arquivo:
         for linha in linhas:
             dados = linha.strip().split(",")
 
@@ -155,10 +155,10 @@ def alterarSenha():
     nova_senha = input("Digite a nova senha: ")
     encontrado = False
 
-    with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "r") as arquivo:
+    with open("usuarios.txt", "r") as arquivo:
         linhas = arquivo.readlines()
 
-    with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "w") as arquivo:
+    with open("usuarios.txt", "w") as arquivo:
         for linha in linhas:
             dados = linha.strip().split(",")
 
@@ -180,7 +180,7 @@ def login():
     dados = []
     aux = False
     
-    with open("/home/cesar/Documents/Python - Testes/Aprendendo/Aprendendo Python/Importando arquivos/Login/usuarios.txt", "r") as arquivo:
+    with open("usuarios.txt", "r") as arquivo:
         #Procurar resgistros do usuario
         for dado in arquivo:
             if dado.strip().split(",")[0] == nome:
