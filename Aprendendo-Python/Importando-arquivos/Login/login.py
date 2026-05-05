@@ -27,28 +27,36 @@ def validar_cpf(cpf):
 
 
 def cadastro():
+    
+
     print("\nCadastro de usuário")
     nome = input("Digite seu nome: ")
-    email = input("Digite seu email: ")
+    while len(nome) <= 2:
+        print("Nome inválido!")
+        nome = input("Digite seu nome: ")
+
+    while True:
+        email = input("Digite seu email: ")
+        if '@' in email and '.' in email:
+            break
+
+        print("Email inválido!")
+    
+
     senha = input("Digite sua senha: ")
-    cpf = str(input("Digite seu CPF: "))
-    aux = False
+    while len(senha) < 5:
+        print("Senha deve conter no minimo 5 caracteres")
+        senha = input("Digite sua senha: ")
 
-    for letra in email:
-        if letra == "@":
-            aux = True
+    while True:
+        cpf = str(input("Digite seu CPF: "))
+
+        if validar_cpf(cpf) == False:
+            print("\nCPF inválido!")
+        
+        else:
+            break
     
-    if aux == False:
-        print("\nEmail inválido!")
-        return
-
-
-  
-
-    
-    if validar_cpf(cpf) == False:
-        print("\nCPF inválido!")
-        return
 
     with open(usuarios, "r") as arquivo:
         if arquivo != False:
